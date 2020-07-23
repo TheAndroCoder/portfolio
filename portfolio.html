@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Sachin Rana | Portfolio</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+        nav{
+            position: relative;
+            padding:10px 0px;
+            background-color: white;
+        }
+        #logo{
+            font-size: 32px;
+            margin:5px;
+            font-weight: bold;
+            color:blue;
+        }
+        .menu{
+            display: flex;
+            justify-content:space-evenly;
+            width:700px;
+            color:#000;
+            font-size: 18px;
+        }
+        .menu a{
+            color:black;
+            margin-top:14px;
+            text-decoration: none;
+            padding:0;
+        }
+        .menu a:hover{
+            border-bottom : 2px solid blue;
+            cursor: pointer;
+            color:blue;
+        }
+        #hero-section{
+            position: relative;
+            height:95vh;
+        }
+        .left{
+            height:100%;
+            width:100%;
+            background-color: rgba(0,0,255,0.1);
+        }
+        .right{
+            height:100%;
+            width:100%;
+            background-color: white;
+        }
+        .hero-center{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            height:100%;
+        }
+        .hello{
+            text-align: center;
+            font-weight: bold;
+            font-size: 32px;
+            color:blue;
+            letter-spacing: 4px;
+        }
+        .name{
+            text-align: center;
+            font-weight: bold;
+            color:black;
+            font-size: 112px;
+        }
+        .skill-text{
+            text-align: center;
+            font-size: 32px;
+            color:black;
+            font-weight: bold;
+        }
+        #skill-span{
+            color:blue;
+        }
+        .arrow-down{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .arrow-down i{
+            padding:20px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0px 0px 5px blue;
+            color:blue;
+            cursor: pointer;
+            animation: myMove 1s infinite alternate;
+        }
+        #about-me-section{
+            width:100%;
+            height:100%;
+            
+        }
+        .about-left{
+            width:100%;
+            height:100%;
+            padding-top: 50px;
+            background-color: #ccc;
+        }
+        .about-right{
+            width:100%;
+            height:100%;
+            background-color: white;
+            padding-top:20px;
+            padding-bottom:20px
+        }
+        #about-me-heading{
+            font-size: 42px;
+            font-weight: bold;
+            margin-left: 20px;
+            color:black
+        }
+        .muted-text{
+            font-size: 20px;
+            color:rgba(0,0,0,0.4);
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        .about-right span{
+            color:black;
+        }
+        .project-complete{
+            font-weight: bold;
+            color: black;
+            font-size: 22px;
+            margin-left: 20px;
+        }
+        #download-cv{
+            width:150px;
+            height:50px;
+            border:none;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0px 0px 5px blue;
+            padding:10px;
+            margin-left: 20px;
+            color:#000;
+            font-weight: bold;
+            transition: box-shadow 0.3s;
+        }
+        #download-cv:hover{
+            box-shadow: 0px 0px 15px blue;
+        }
+        #skills-section{
+            padding:50px 0px;
+        }
+        .skills-heading a{
+            text-decoration: none;
+            text-align: center;
+            border:1px solid blue;
+            padding:10px;
+            color:blue;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .skills-heading a:first-child{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .skills-heading a:last-child{
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .skills-heading a:active{
+            background-color: rgba(0,0,255,0.1);
+        }
+        .skills-heading a:hover{
+            background-color: rgba(0,0,255,0.6);
+            color:white;
+        }
+        #education-div{
+            width:100%;
+            padding:20px 20px;
+            margin:30px 0;
+        }
+        #experience-div{
+            width:100%;
+            padding:20px;
+            margin:30px 0;
+        }
+        .heading{
+            font-size: 38px;
+            font-weight: bold;
+            color:blue;
+            display:block;
+        }
+        i{
+            padding:10px;
+            background-color: blue;
+            color:white;
+            font-size: 24px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .edu-sub-heading{
+            color:black;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .year{
+            margin-left: 70px;
+            font-size: 18px;
+            font-weight: bold;
+            color:blue;
+        }
+        .institute{
+            margin-left: 70px;
+            color:black;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+        @keyframes myMove {
+            from {box-shadow: 0px 0px 10px blue;}
+            to {box-shadow: 0px 0px 20px blue;transform:translate(0,20px)}
+        }
+        @media only screen and (max-width: 1000px) {
+            .menu{
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .name{
+                font-size: 68px;
+            }
+            .about-left{
+                display: none;
+            }
+            .edu-sub-heading{
+                font-size: 20px;
+            }
+            .institute{
+                font-size: 16px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            .name{
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <p id="logo">Sachin Rana</p>
+                <div class="menu">
+                    <a href="/">Home</a>
+                    <a href="#about-me-section">About</a>
+                    <a href="#">Resume</a>
+                    <a href="#">Services</a>
+                    <a href="#">Projects</a>
+                    <a href="#">My Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero-section">
+        <div class="d-flex" style="height: 100%;position: relative;">
+            <div class="flex-fill left"></div>
+            <div class="flex-fill right"></div>
+            <div class="hero-center">
+                <div style="width:100%;">
+                    <p class="hello">HEY I'M</p>
+                    <p class="name">Sachin Rana</p>
+                    <p class="skill-text">I am a <span id="skill-span"></span></p>
+                    <p onclick="scroll1()" class="arrow-down"><i class="fa fa-arrow-down fa-2x"></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-me-section">
+        <div class="container" style="height:100%">
+            <div class="d-flex justify-content-center" style="height: 100%;">
+                <div class="about-left">
+                    <img src="bg-transparent-me.png" height="100%" width="100%">
+                </div>
+                <div class="about-right">
+                    <p id="about-me-heading">About Me</p>
+                    <p class="muted-text">&ldquo;Talk is cheap, Show me the code...&rdquo;</p>
+                    <p class="muted-text"><span>Name : </span>Sachin Rana</p>
+                    <p class="muted-text"><span>Date of birth : </span>25 April, 1998</p>
+                    <p class="muted-text"><span>Address : </span>Liluah-Howrah, WB, IN</p>
+                    <p class="muted-text"><span>Pincode : </span>711204</p>
+                    <p class="muted-text"><span>Email : </span>sachin25041998@gmail.com</p>
+                    <p class="project-complete"><span style="color:blue;font-size: 48px;">30</span> Project Complete</p>
+                    <button id="download-cv">DOWNLOAD CV</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills-section">
+        <div class="container">
+            <div class="d-flex skills-heading">
+                <a href="#education-div" class="flex-fill">Education</a>
+                <a href="#experience-div" class="flex-fill">Experience</a>
+                <a class="flex-fill" href="#skills">Skills</a>
+                <a class="flex-fill" href="#awards">Awards</a>
+            </div>
+            <div>
+                <div id="education-div">
+                    <p class="heading">Education</p>
+                    <p class="edu-sub-heading"><i class="fa fa-graduation-cap"></i>Bachelor Of Technology in Information Technology</p>
+                    <p class="year">2016-2020</p>
+                    <p class="institute">Heritage Institute of Technology</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-graduation-cap"></i>Higher Secondary</p>
+                    <p class="year">2014-2016</p>
+                    <p class="institute">Sudhir memorial institute</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-graduation-cap"></i>Secondary</p>
+                    <p class="year">2014</p>
+                    <p class="institute">Rose Bud School</p>
+                </div>
+                <div id="experience-div">
+                    <p class="heading">Experience</p>
+                    <p class="edu-sub-heading"><i class="fa fa-pencil-square-o"></i>Microservices Developer</p>
+                    <p class="year">2020 - PRESENT</p>
+                    <p class="institute">Tata Consultancy Services</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-pencil-square-o"></i>Microservices Developer Intern</p>
+                    <p class="year">JAN 2020 - APR 2020</p>
+                    <p class="institute">Tata Consultancy Services</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-pencil-square-o"></i>Apsolutio Ltd</p>
+                    <p class="year">DEC 2018 - JAN 2019</p>
+                    <p class="institute">Rose Bud School</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+        window.onload=function(){
+            var span = document.getElementById('skill-span');
+            var skills = ['Android App Developer.','Web Developer.','Desktop App Developer.','Deep Learning Enthusiast.','Java Developer.','Full Stack Developer.'];
+            var options = {
+                strings :skills,
+                loop:true,
+                shuffle:true,
+                typeSpeed:60
+            }
+            var typed=new Typed('#skill-span',options);
+        }
+        function scroll1(){
+            console.log('Scroll');
+            window.location.href="#about-me-section"
+        }
+    </script>
+</body>
+</html>
