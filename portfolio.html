@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Sachin Rana | Portfolio</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+        nav{
+            position: relative;
+            padding:10px 0px;
+            background-color: white;
+        }
+        #logo{
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top:0px;
+            width:35px;
+            height:35px;
+        }
+        .menu{
+            display: flex;
+            justify-content:space-evenly;
+            width:70%;
+            color:#000;
+            font-size: 18px;
+        }
+        .menu a{
+            color:black;
+            margin-top:14px;
+            text-decoration: none;
+            padding:0;
+        }
+        .menu a:hover{
+            border-bottom : 2px solid blue;
+            cursor: pointer;
+            color:blue;
+        }
+        .hamburger{
+            display: none;
+            width:35px;
+            height:50px;
+            cursor: pointer;
+        }
+        .hamburger span{
+            display: block;
+            margin:6px 0;
+            background-color: blue;
+            width:100%;
+            height:4px;
+        }
+        #hero-section{
+            position: relative;
+            height:95vh;
+        }
+        .left{
+            height:100%;
+            width:100%;
+            background-color: rgba(0,0,255,0.1);
+        }
+        .right{
+            height:100%;
+            width:100%;
+            background-color: white;
+        }
+        .hero-center{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            height:100%;
+        }
+        .hello{
+            text-align: center;
+            font-weight: bold;
+            font-size: 32px;
+            color:blue;
+            letter-spacing: 4px;
+        }
+        .name{
+            text-align: center;
+            font-weight: bold;
+            color:black;
+            font-size: 112px;
+        }
+        .skill-text{
+            text-align: center;
+            font-size: 32px;
+            color:black;
+            font-weight: bold;
+        }
+        #skill-span{
+            color:blue;
+        }
+        .arrow-down{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .arrow-down i{
+            padding:20px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0px 0px 5px blue;
+            color:blue;
+            cursor: pointer;
+            animation: myMove 1s infinite alternate;
+        }
+        #about-me-section{
+            width:100%;
+            height:100%;
+            
+        }
+        .about-left{
+            width:100%;
+            height:100%;
+            padding-top: 50px;
+            background-color: #ccc;
+        }
+        .about-right{
+            width:100%;
+            height:100%;
+            background-color: white;
+            padding-top:20px;
+            padding-bottom:20px
+        }
+        #about-me-heading{
+            font-size: 42px;
+            font-weight: bold;
+            margin-left: 20px;
+            color:black
+        }
+        .muted-text{
+            font-size: 20px;
+            color:rgba(0,0,0,0.4);
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        .about-right span{
+            color:black;
+        }
+        .project-complete{
+            font-weight: bold;
+            color: black;
+            font-size: 22px;
+            margin-left: 20px;
+        }
+        #download-cv{
+            width:150px;
+            height:50px;
+            border:none;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0px 0px 5px blue;
+            padding:10px;
+            margin-left: 20px;
+            color:#000;
+            font-weight: bold;
+            transition: box-shadow 0.3s;
+        }
+        #download-cv:hover{
+            box-shadow: 0px 0px 15px blue;
+        }
+        #skills-section{
+            padding:50px 0px;
+        }
+        #services-section{
+            margin:30px 0;
+        }
+        #projects-section{
+            margin:30px 0;
+        }
+        #blog-section{
+            margin:30px 0;
+        }
+        .skills-heading a{
+            text-decoration: none;
+            text-align: center;
+            border:1px solid blue;
+            padding:10px;
+            color:blue;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .skills-heading a:first-child{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .skills-heading a:last-child{
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .skills-heading a:active{
+            background-color: rgba(0,0,255,0.1);
+        }
+        .skills-heading a:hover{
+            background-color: rgba(0,0,255,0.6);
+            color:white;
+        }
+        #education-div{
+            width:100%;
+            padding:20px 20px;
+            margin:30px 0;
+        }
+        #experience-div{
+            width:100%;
+            padding:20px;
+            margin:30px 0;
+        }
+        #awards-div{
+            width:100%;
+            padding:20px;
+            margin: 30px 0;
+        }
+        .heading{
+            font-size: 38px;
+            font-weight: bold;
+            color:blue;
+            display:block;
+        }
+        i{
+            padding:10px;
+            background-color: blue;
+            color:white;
+            font-size: 24px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .edu-sub-heading{
+            color:black;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .year{
+            margin-left: 70px;
+            font-size: 18px;
+            font-weight: bold;
+            color:blue;
+        }
+        .institute{
+            margin-left: 70px;
+            color:black;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+        .sidebar{
+            display: none;
+            position: fixed;
+            top:0;
+            left:-70%;
+            width:70%;
+            height:100%;
+            background-color: rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index:99;
+            transition: 0.5s;
+        }
+        .sidebar.active{
+            left:0;
+        }
+        .sidebar img{
+            margin-top: 100px;
+            border-radius: 50%;
+            border:5px solid blue;
+            box-shadow: 0px 0px 20px blue;
+        }
+        .s-menu{
+            height:500px;
+            margin-top:50px;
+            width:100%;
+        }
+        .s-menu p{
+            text-align: center;
+            font-size: 20px;
+            padding: 10px 0px;
+            margin:5px 20px;
+            border-radius: 10px;
+
+        }
+        .s-menu p:hover{
+            cursor: pointer;
+            background-color: rgba(0,0,255,0.3);
+        }
+        .top{
+            position: fixed;
+            bottom:20px;
+            right:20px;
+            padding:10px;
+            cursor: pointer;
+            background-color: rgba(0,0,255,0.9);
+        }
+        .skill-level-div{
+            width:300px;
+            height:100%;
+            
+            margin:10px;
+        }
+        .skill-name{
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom:2px;
+        }
+        .skill-progress{
+            width:100%;
+            height:10px;
+            background-color: #ccc;
+
+        }
+        .skill-progress-span{
+            height:10px;
+            background-color: blue;
+            display: block;
+        }
+        .services-heading{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 48px;
+            color:black;
+            font-weight: bold;
+        }
+        .services-card{
+            width:100%;
+            height:100%;
+            background-color: white;
+            box-shadow: 0px 0px 20px #ccc;
+            padding:20px;
+            margin-bottom:10px;
+        }
+        .services-card .head{
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color:blue;
+        }
+        .services-card span{
+            height:3px;
+            width:100%;
+            background-color: blue;
+            display: block;
+        }
+        .projects-div{
+            width:100%;
+            height:500px;
+            background-color: red;
+        }
+        .project-card{
+            width:100%;
+            height:150px;
+            padding:20px;
+            margin:10px;
+            background-color: white;
+            box-shadow: 0px 0px 20px #ccc;
+        }
+        .project-card .number{
+            font-size: 42px;
+            text-align: center;
+            color:blue;
+            font-weight: bold;
+        }
+        .project-card .number-text{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            color:black;
+        }
+        .blog-card{
+            position: relative;
+            width:100%;
+            height:300px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0px 0px 20px #ccc;
+            transition: 0.3s;
+            margin-bottom:10px;
+        }
+        .blog-card:hover{
+            cursor:pointer;
+            box-shadow: 0px 0px 20px black;
+        }
+        .blog-card a{
+            display: none;
+            padding:10px 20px;
+            color:black;
+            top:45%;
+            color:white;
+            left:35%;
+            position: absolute;
+            text-decoration: none;
+            background-color: blue;
+            border-radius: 10px;
+        }
+        .blog-card:hover a{
+            display:block;
+        }
+        #freelancing-section{
+            margin:30px 0;
+            padding:50px 0;
+            height:300px;
+            background: linear-gradient(to right, rgba(0,0,255,0.8),rgba(0,0,255,0.8)),url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.e-bas.com.au%2Fwp-content%2Fuploads%2F2014%2F04%2Fbigstock-Html-Web-Code-47547874.jpg&f=1&nofb=1');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;background-attachment: fixed;
+        }
+        #freelancing-section p{
+            font-size:52px;
+            color:white;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+        #contact-section{
+            margin-top:30px;
+        }
+        .input-control{
+            width:80%;
+            margin:10px 20px;
+            height:40px;
+            padding-left:10px ;
+            color:#000;
+            font-weight: bold;
+            outline: none;
+            border:1px solid #ccc;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        .input-control:focus{
+            border:1px solid black;
+        }
+        textarea{
+            width:80%;
+            margin:10px 20px;
+            padding:10px;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-weight: bold;
+            color:black;
+            transition: 0.3s;
+        }
+        textarea:focus{
+            border:1px solid black;
+        }
+        .send-btn{
+            width:240px;
+            height:50px;
+            color:white;
+            background-color: blue;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-left: 20px;
+        }
+        footer{
+            width:100%;
+            
+            background-color: blue;
+            padding:50px;
+        }
+        .connect-ico i{
+            padding:10px;
+            cursor: pointer;
+        }
+        .connect-ico i:hover{
+            background-color: #ccc;
+            color:black;
+        }
+        @keyframes myMove {
+            from {box-shadow: 0px 0px 10px blue;}
+            to {box-shadow: 0px 0px 20px blue;transform:translate(0,20px)}
+        }
+        @media only screen and (max-width: 1000px) {
+            .menu{
+                display: none;
+            }
+            .hamburger{
+                display: block;
+            }
+            .sidebar{
+                display: block;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .name{
+                font-size: 68px;
+            }
+            .about-left{
+                display: none;
+            }
+            .edu-sub-heading{
+                font-size: 20px;
+            }
+            .institute{
+                font-size: 16px;
+            }
+            .right-img{
+                display: none;
+            }
+            
+        }
+        @media only screen and (max-width: 400px) {
+            .name{
+                font-size: 48px;
+            }
+            #freelancing-section p{
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <i class="top fa fa-arrow-up fa-2x" onclick="home()"></i>
+    <div class="sidebar">
+        <div class="d-flex justify-content-center">
+            <img src="myself.jpg" width="100px" height="100px" class="sidebar-img"/>
+        </div>
+        <div class="s-menu">
+            <p onclick="sidebarClick('')">Home</p>
+            <p onclick="sidebarClick('about-me-section')">About</p>
+            <p onclick="sidebarClick('skills-section')">Resume</p>
+            <p onclick="sidebarClick('services-section')">Services</p>
+            <p onclick="sidebarClick('projects-section')">Projects</p>
+            <p onclick="sidebarClick('blog-section')">My Blog</p>
+            <p onclick="sidebarClick('contact-section')">Contact</p>
+        </div>
+    </div>
+    <nav>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <p id="logo"><img src="myself.jpg" width="100%" height="100%"></p>
+                <div class="menu">
+                    <a href="#">Home</a>
+                    <a href="#about-me-section">About</a>
+                    <a href="#skills-section">Resume</a>
+                    <a href="#services-section">Services</a>
+                    <a href="#projects-section">Projects</a>
+                    <a href="#blog-section">My Blog</a>
+                    <a href="#contact-section">Contact</a>
+                </div>
+                <div class="hamburger" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="hero-section">
+        <div class="d-flex" style="height: 100%;position: relative;">
+            <div class="flex-fill left"></div>
+            <div class="flex-fill right">
+                <div class="d-flex justify-content-center" style="height:100%;padding-top: 50px;">
+                    <img src="bg-transparent1.png" width="300px" height="100%" class="right-img"/>
+                </div>
+            </div>
+            <div class="hero-center">
+                <div style="width:100%;">
+                    <p class="hello">HEY I'M</p>
+                    <p class="name">Sachin Rana</p>
+                    <p class="skill-text">I am a <span id="skill-span"></span></p>
+                    <p onclick="scroll1()" class="arrow-down"><i class="fa fa-arrow-down fa-2x"></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-me-section">
+        <div class="container" style="height:100%">
+            <div class="d-flex justify-content-center" style="height: 100%;">
+                <div class="about-left">
+                    <img src="bg-transparent-me.png" height="100%" width="100%">
+                </div>
+                <div class="about-right">
+                    <p id="about-me-heading">About Me</p>
+                    <p class="muted-text">&ldquo;Talk is cheap, Show me the code...&rdquo;</p>
+                    <p class="muted-text"><span>Name : </span>Sachin Rana</p>
+                    <p class="muted-text"><span>Date of birth : </span>25 April, 1998</p>
+                    <p class="muted-text"><span>Address : </span>Liluah-Howrah, WB, IN</p>
+                    <p class="muted-text"><span>Pincode : </span>711204</p>
+                    <p class="muted-text"><span>Email : </span>sachin25041998@gmail.com</p>
+                    <p class="project-complete"><span style="color:blue;font-size: 48px;">30</span> Project Complete</p>
+                    <button id="download-cv">DOWNLOAD CV</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills-section">
+        <div class="container">
+            <div class="d-flex skills-heading">
+                <a href="#education-div" class="flex-fill">Education</a>
+                <a href="#experience-div" class="flex-fill">Experience</a>
+                <a class="flex-fill" href="#skill-level-section">Skills</a>
+                <a class="flex-fill" href="#awards-div">Awards</a>
+            </div>
+            <div>
+                <div id="education-div">
+                    <p class="heading">Education</p>
+                    <p class="edu-sub-heading"><i class="fa fa-graduation-cap"></i>Bachelor Of Technology in Information Technology</p>
+                    <p class="year">2016-2020</p>
+                    <p class="institute">Heritage Institute of Technology</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-graduation-cap"></i>Higher Secondary</p>
+                    <p class="year">2014-2016</p>
+                    <p class="institute">Sudhir memorial institute</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-graduation-cap"></i>Secondary</p>
+                    <p class="year">2014</p>
+                    <p class="institute">Rose Bud School</p>
+                </div>
+                <div id="experience-div">
+                    <p class="heading">Experience</p>
+                    <p class="edu-sub-heading"><i class="fa fa-pencil-square-o"></i>Microservices Developer</p>
+                    <p class="year">AUG 2020 - PRESENT</p>
+                    <p class="institute">Tata Consultancy Services</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-pencil-square-o"></i>Microservices Developer Intern</p>
+                    <p class="year">JAN 2020 - APR 2020</p>
+                    <p class="institute">Tata Consultancy Services</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-pencil-square-o"></i>Android Developer Intern</p>
+                    <p class="year">DEC 2018 - JAN 2019</p>
+                    <p class="institute">Apsolutio Ltd</p>
+                </div>
+                <p class="heading">Skills</p>
+                <div class="d-flex flex-wrap justify-content-center" id="skill-level-section">
+                    <div class="skill-level-div">
+                        <p class="skill-name">Android</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:90%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">Core + Advanced Java</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:80%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">Java FX</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:70%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">Javascript</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:75%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">Socket IO</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:60%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">React</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:60%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">Spring Boot</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:80%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">Express JS</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:85%"></span></p>
+                    </div>
+                    <div class="skill-level-div">
+                        <p class="skill-name">Deep Learning</p>
+                        <p class="skill-progress"><span class="skill-progress-span" style="width:70%"></span></p>
+                    </div>
+                </div>
+                <div id="awards-div">
+                    <p class="heading">Awards</p>
+                    <p class="edu-sub-heading"><i class="fa fa-trophy"></i>Smart India Hackathon - Runnerup</p>
+                    <p class="year">2019</p>
+                    <p class="institute">AICTE</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-trophy"></i>Best Android App Developer</p>
+                    <p class="year">2018</p>
+                    <p class="institute">Dynamotion, Aptech</p>
+                    <hr>
+                    <p class="edu-sub-heading"><i class="fa fa-trophy"></i>Best Desktop App Developer</p>
+                    <p class="year">2018</p>
+                    <p class="institute">Dynamotion, Aptech</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services-section">
+        <div class="container">
+            <p class="services-heading">Services</p>
+            <div class="row">
+                <div class="col-sm-4 mb-2">
+                    <div class="d-flex justify-content-center flex-column services-card">
+                        <p class="head">Backend Development</p>
+                        <span class="light-border"></span>
+                        <p class="muted-text mt-3">I am a proficient Backend Developer with knowledge in various backend technologies and projects done in spring boot, node JS, Express JS, Socket IO and many more..</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-2">
+                    <div class="services-card">
+                        <p class="head">Android Development</p>
+                        <span class="light-border"></span>
+                        <p class="muted-text mt-3">I am a proficient Android Developer and have made many projects on Native Android Development using Android Studio</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-2">
+                    <div class="services-card">
+                        <p class="head">Deep Learning</p>
+                        <span class="light-border"></span>
+                        <p class="muted-text mt-3">I am a data science and deep learning enthusiast and have made worked on many projects including computer vision and learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects-section">
+        <p class="services-heading">My Projects</p>
+        <div class="d-lg-flex">
+            <div class="flex-fill projects-div">
+                <img src="project2.jpg" width="100%" height="100%"/>
+            </div>
+            <div class="flex-fill projects-div">
+                <img src="project1.jpg" width="100%" height="100%"/>
+            </div>
+            <div class="flex-fill projects-div">
+                <img src="project3.png" width="100%" height="100%"/>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="col-sm-3">
+                    <div class="project-card">
+                        <p class="number">38</p>
+                        <p class="number-text">Complete Projects</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="project-card">
+                        <p class="number">3</p>
+                        <p class="number-text">Awards</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="project-card">
+                        <p class="number">300</p>
+                        <p class="number-text">Cups of Coffee</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="project-card">
+                        <p class="number">12</p>
+                        <p class="number-text">Certifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog-section">
+        <p class="services-heading">My Blogs</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="blog-card">
+                        <a href="http://deeperinsights.herokuapp.com/post?id=1" target="_blank">Read Blog</a>
+                        <img src="https://i.stack.imgur.com/skYlW.png" width="100%" height="100%"/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card">
+                        <a href="http://deeperinsights.herokuapp.com/post?id=28" target="_blank">Read Blog</a>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FV6hHdaf53xk%2Fmaxresdefault.jpg&f=1&nofb=1" width="100%" height="100%"/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card">
+                        <a href="https://medium.com/@sachin25041998/developing-a-one-dimensional-generative-adversarial-network-using-tensorflow-72b58db3f89#0d50-c8da7ae23bac" target="_blank">Read Blog</a>
+                        <img src="https://miro.medium.com/max/700/1*e1Sr-W4kPmCQdpLdhFyPNQ.png" width="100%" height="100%"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="freelancing-section">
+        <div class="d-flex flex-column align-items-center" style="height:100%;">
+            <p>I am Available for Freelancing</p>
+            <button id="download-cv" onclick="go('contact-section')">HIRE ME</button>
+        </div>
+    </section>
+
+    <section id="contact-section">
+        <p class="services-heading">Contact Me</p>
+        <div class="container" style="height:100%">
+            <div class="d-flex justify-content-center" style="height: 100%;">
+                <div class="about-left">
+                    <img src="bg-transparent-me.png" height="100%" width="100%">
+                </div>
+                <div class="about-right ml-4">
+                    <input class="input-control" placeholder="Your Name"/>
+                    <input class="input-control" placeholder="Your Email"/>
+                    <input class="input-control" placeholder="Subject"/>
+                    <textarea placeholder="Message" rows="10" cols="20"></textarea>
+                    <button class="send-btn">SEND MESSAGE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <p class="h4 text-white"><i class="fa fa-envelope"></i>sachin25041998@gmail.com</p>
+                <div class="connect-ico">
+                    <i class="fa fa-twitter fa-2x" title="Twitter"></i>
+                    <i class="fa fa-2x fa-facebook-square" title="Facebook"></i>
+                    <i class="fa fa-2x fa-github" title="Github"></i>
+                    <i class="fa fa-2x fa-linkedin" title="Linked In"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+        window.onload=function(){
+            var span = document.getElementById('skill-span');
+            var skills = ['Android App Developer.','Web Developer.','Desktop App Developer.','Deep Learning Enthusiast.','Java Developer.','Full Stack Developer.'];
+            var options = {
+                strings :skills,
+                loop:true,
+                shuffle:true,
+                typeSpeed:60
+            }
+            var typed=new Typed('#skill-span',options);
+        }
+        function scroll1(){
+            console.log('Scroll');
+            window.location.href="#about-me-section"
+        }
+        function toggleSidebar(){
+            document.getElementsByClassName('sidebar')[0].classList.toggle('active');
+        }
+        function sidebarClick(where){
+            window.location.href="#"+where;
+            toggleSidebar();
+        }
+        function home(){
+            window.location.href="#";
+        }
+        function go(where){
+            window.location.href="#"+where;
+        }
+    </script>
+</body>
+</html>
